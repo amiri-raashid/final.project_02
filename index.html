@@ -333,24 +333,7 @@ Host: 205.174.165.73:8080
 <span class="in">HTTP/1.1 200 OK</span>   # the server is live and answering</div>
       </div>
     </div>
-
-    <div class="finding">
-      <div>
-        <div class="eyebrow gold">Priority 3</div>
-        <h3>PortScan: the firewall did its job</h3>
-        <ul>
-          <li>Launched from <b>the same machine</b> that ran the C2 server.</li>
-          <li>Hit <b>exactly 1,000 ports</b>, which is Nmap's default scan.</li>
-          <li>Most targeted: 80, 21, 22, 443, 139, and 445.</li>
-        </ul>
-        <span class="mitre">MITRE ATT&amp;CK T1595</span>
-      </div>
-      <div class="versus">
-        <div class="vs good"><div class="tag">Firewall rules on</div><div class="big">365</div><div class="sub">flows reached the server</div></div>
-        <div class="vs bad"><div class="tag">Firewall rules off</div><div class="big">158,558</div><div class="sub">flows reached the server</div></div>
-      </div>
-    </div>
-
+   
     <div class="finding">
       <div>
         <div class="eyebrow gold">Priority 2</div>
@@ -368,6 +351,23 @@ Host: 205.174.165.73:8080
           <div class="vs bad"><div class="tag">During the attack</div><div class="big">128,024</div><div class="sub">flows in 20 minutes</div></div>
         </div>
         <div class="callout"><b>Do not block 172.16.0.1.</b> All of the flood appears to come from that address, but it is the firewall's own inside address. Blocking it cuts off every real visitor and finishes the attacker's job.</div>
+      </div>
+    </div>
+    
+    <div class="finding">
+      <div>
+        <div class="eyebrow gold">Priority 3</div>
+        <h3>PortScan: the firewall did its job</h3>
+        <ul>
+          <li>Launched from <b>the same machine</b> that ran the C2 server.</li>
+          <li>Hit <b>exactly 1,000 ports</b>, which is Nmap's default scan.</li>
+          <li>Most targeted: 80, 21, 22, 443, 139, and 445.</li>
+        </ul>
+        <span class="mitre">MITRE ATT&amp;CK T1595</span>
+      </div>
+      <div class="versus">
+        <div class="vs good"><div class="tag">Firewall rules on</div><div class="big">365</div><div class="sub">flows reached the server</div></div>
+        <div class="vs bad"><div class="tag">Firewall rules off</div><div class="big">158,558</div><div class="sub">flows reached the server</div></div>
       </div>
     </div>
   </div>
